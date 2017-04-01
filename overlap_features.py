@@ -121,7 +121,7 @@ if __name__ == '__main__':
   #stoplist = None 
  
   all_questions, all_answers, all_qids = [], [], []
-  base_dir = args.dataset
+  base_dir = args.dataset + '/'
   # base_dir = '../../data/' + sys.argv[1] + '/'
 
   sub_dirs = ['train/','train-all/', 'raw-dev/', 'raw-test/']

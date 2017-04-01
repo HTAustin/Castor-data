@@ -24,13 +24,14 @@ The pre-initialized word2vec embeddings have to be downloaded from [here](https:
 # TREC-QA
 The addressed task is a popular answer sentence selection benchmark, where the goal is for each question to select relevant answer sentences. The dataset was first introduced by (Wang et al., 2007) and further elaborated by (Yao et al., 2013). It is freely availabe.
 
-We provided the processed xml file in jacana-qa-naacl2013-data-results/ folder.
+We provided the processed xml file in TrecQA/jacana-qa-naacl2013-data-results/ folder.
 
-# BUILD Dataset
+
+# BUILD TrecQA Dataset
 
 ```
 python3 parse.py
 
-python3 overlap_features.py TrecQA/
+python3 overlap_features.py TrecQA
 
 ```
