@@ -1,1 +1,4 @@
-TrecQA
+TrecQA/train
+TrecQA/train-all
+TrecQA/raw-test
+TrecQA/raw-dev

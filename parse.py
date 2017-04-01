@@ -33,9 +33,9 @@ def load_data(fname):
       label = label.group(1)
       label = 1 if label == 'positive' else 0
       answer = line.lower().split('\t')
-      if len(answer) > 60:
+      # if len(answer) > 60:
         # Truncate at max 60 tokens
-        answer =  answer[0:60]
+        # answer =  answer[0:60]
         # num_skipped += 1
         # continue
       labels.append(label)
@@ -83,16 +83,16 @@ def write_to_file(xmlF,outdir):
 
   questions_file = open(outdir+'/a.toks','w')
   for q in questions:
-    q_toks = TreebankWordTokenizer().tokenize(' '.join(q))
-    q_str = ' '.join(q_toks).lower()
+    # q_toks = TreebankWordTokenizer().tokenize(' '.join(q))
+    q_str = ' '.join(q).lower()
     questions_file.write(q_str+'\n')
   questions_file.close()
 
 
   answers_file = open(outdir+'/b.toks','w')
   for a in answers:
-    a_toks = TreebankWordTokenizer().tokenize(' '.join(a))
-    a_str = ' '.join(a_toks).lower()
+    # a_toks = TreebankWordTokenizer().tokenize(' '.join(a))
+    a_str = ' '.join(a).lower()
     answers_file.write(a_str+'\n')
   answers_file.close()
 
@@ -111,14 +111,14 @@ if __name__ == '__main__':
   stoplist = None
 
 
-  train = 'jacana-qa-naacl2013-data-results/train.xml'
+  train = 'TrecQA/jacana-qa-naacl2013-data-results/train.xml'
   write_to_file(train,'TrecQA/train')
-  train_all = 'jacana-qa-naacl2013-data-results/train-all.xml'
+  train_all = 'TrecQA/jacana-qa-naacl2013-data-results/train-all.xml'
   write_to_file(train_all,'TrecQA/train-all')  
 
-  dev = 'jacana-qa-naacl2013-data-results/dev.xml'
+  dev = 'TrecQA/jacana-qa-naacl2013-data-results/dev.xml'
   write_to_file(dev,"TrecQA/raw-dev")
-  test = 'jacana-qa-naacl2013-data-results/test.xml'
+  test = 'TrecQA/jacana-qa-naacl2013-data-results/test.xml'
   write_to_file(test,"TrecQA/raw-test")
 
     
