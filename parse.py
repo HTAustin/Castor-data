@@ -34,8 +34,10 @@ def load_data(fname):
       label = 1 if label == 'positive' else 0
       answer = line.lower().split('\t')
       if len(answer) > 60:
-        num_skipped += 1
-        continue
+        # Truncate at max 60 tokens
+        answer =  answer[0:60]
+        # num_skipped += 1
+        # continue
       labels.append(label)
       answers.append(answer)
       questions.append(question)
